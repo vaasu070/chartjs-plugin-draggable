@@ -22,7 +22,10 @@ export class DraggableLineAnnotationElement extends DraggableElement {
 	}
 
 	onDrag(event) {
+		
+		console.log(event,this.scale, this._getValue(event))
 		this.config.value = this._constrainValue(this.scale, this._getValue(event));
+		console.log(this.config.value)
 		this.chart.update(0);
 	}
 
